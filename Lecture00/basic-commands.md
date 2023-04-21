@@ -42,3 +42,26 @@ ps aux
 
 # difference between top and ps aux ?
 # top is interactive, ps aux is not interactive
+``` 
+
+## Install R 
+
+```
+# update the package list
+sudo apt-get update
+sudo apt-get install r-base
+```
+
+## disable language tool linter extension in vscode 
+
+You do not need `LanguageTool for Visual Studio Code` extension, which is very annoying.
+
+## Tips on using vscode
+
+- `ctrl + shift + p` to open command palette (the most important shortcut)
+- `ctrl + shift + x` to open extensions
+- `ctrl + shift + b` to open build tasks
+- `ctrl + shift + g` to open git
+- turn off notifications by clicking the bell icon
+
+We will learn more about vscode during the course.
