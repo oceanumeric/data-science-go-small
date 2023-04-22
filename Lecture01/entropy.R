@@ -16,6 +16,25 @@ hello
 hello[, hello_cumsum := cumsum(hello_int)]
 hello
 
+# create a new variable that divides hello_int by the number of observations
+hello[, hello_prob := (hello_int / nrow(hello))]
+hello
+
+# Big Lesson 1: never use the same name for a variable as the name of a
+# data.table
+
+# re-create a data.table with one variable and 10 observations
+# variable is a vector of 'hello' strings called dt_demo
+dt_demo <- data.table(hello = rep("hello", 10))
+dt_demo
+
+# Exercise: repeat what we have done on the dt_demo data.table
+
+
+
+
+
+
 # create a table with 6 variables and 10 observations
 # first variable is a vector of all 'hello' strings
 # second variable is a vector of all 1 integers
