@@ -1,4 +1,20 @@
 # R script to calculate entropy of a given sequence
+# install the data.table package
+# install.packages("data.table")
+library(data.table)
+
+# create a data.table with one variable and 10 observations
+# variable is a vector of 'hello' strings
+hello <- data.table(hello = rep("hello", 10))
+hello
+
+# add another variable to the data.table, filled with integer 1
+hello[, hello_int := 1]
+hello
+
+# create a new variable that calculates the cumulative sum of hello_int
+hello[, hello_cumsum := cumsum(hello_int)]
+hello
 
 # create a table with 6 variables and 10 observations
 # first variable is a vector of all 'hello' strings
@@ -13,7 +29,7 @@
 # 2, 3, 4, 5, 6, 7, 8, 9, 10 to represent 'tomorrow', 'will', 'be', 'a',
 # 'great', 'day'
 
-entropy_example <- data.frame(
+entropy_example <- data.table(
     hello = rep("hello", 10),
     hello_int = rep(1, 10),
     hello_world = c('hello', 'world', rep('hello', 8)),
