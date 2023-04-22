@@ -42,6 +42,9 @@ ps aux
 
 # difference between top and ps aux ?
 # top is interactive, ps aux is not interactive
+
+# download an image from the internet
+wget <image_url>
 ``` 
 
 ## Install R 
