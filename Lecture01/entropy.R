@@ -31,8 +31,34 @@ dt_demo
 # Exercise: repeat what we have done on the dt_demo data.table
 
 
+entropy_example <- fread("https://docs.google.com/spreadsheets/d/1Ral3hG1AHCuiaWYtB3taCSKuWl_j1_A0aKOTb_uh43E/edit?usp=sharing")
+entropy_example
+
+entropy_fun <- function(x) {
+    # x is the probability of each unique value in the vector
+    return(-x * log2(x))
+}
+entropy_names <- entropy_example[, paste(names(.SD), "_entropy", sep = ""),
+                                                .SDcols = patterns("prob")]
+
+entropy_example[, (entropy_names) := lapply(.SD, function(x) entropy_fun(x)),
+                                                .SDcols = patterns("prob")]
+# cumulative entropy
+entropy_example[, lapply(.SD, cumsum), .SDcols = patterns("entropy")] 
+
+options(repr.plot.width = 8, repr.plot.height = 5)
+plot(entropy_example$prob1_entropy, type = "l", col = "red", ylim = c(0, 1))
+lines(entropy_example$prob2_entropy, col = "blue", ylim = c(0, 1))
+lines(entropy_example$prob3_entropy, col = "#0F7F12", ylim = c(0, 1))
+legend("topright", legend = c("prob1_entropy", "prob2_entropy", "prob3_entropy"),
+       col = c("red", "blue", "#0F7F12"), lty = 1, cex = 0.8)
 
 
+### ------------- experiment with ChatGPT ------------------ ###
+
+# Take away:
+# for small examples, excel works way better !
+# you do not need any coding if you only have less than 100 observations
 
 
 # create a table with 6 variables and 10 observations
@@ -147,6 +173,19 @@ col_names_prob <- entropy_example[, paste(names(.SD), "_prob", sep=""),
                                     .SDcols = patterns("int")]
 entropy_example[, (col_names_prob) := lapply(.SD, function(x) prop.table(x)),
                     .SDcols = patterns("int")]
+entropy_example
+
+
+# create a new variable that calculates the entropy of the probabilities
+# of each unique value for variables with names containing 'prob'
+entropy_prob <- function(x) {
+    # x as probabilities
+    return(-x * log2(x))
+}
+entropy_names_entropy <- entropy_example[, paste(names(.SD), "_entropy", sep=""),
+                                    .SDcols = patterns("prob")]
+entropy_example[, (entropy_names_entropy) := lapply(.SD, function(x) entropy_prob(x)),
+                    .SDcols = patterns("prob")]
 entropy_example
 
 
