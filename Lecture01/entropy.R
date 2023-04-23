@@ -60,6 +60,7 @@ entropy_example <- data.table(
 
 str(entropy_example)
 summary(entropy_example)
+head(entropy_example)
 
 # write a function to calculate entropy of a given vector
 entropy <- function(x) {
@@ -79,7 +80,49 @@ entropy(entropy_example$hello_int2)
 entropy(entropy_example$hello_int3)
 
 
-entropy_example$prob <- rep(1/10, 10)
+# create a vector called hello_int_prob that contains the probability of
+# each unique value in the second variable
+# add in to the entropy_example data.table
+entropy_example[, hello_int_prob := table(hello_int) / nrow(entropy_example)]
+
+# the above code does not work because the table function does not
+# recognize the hello_int variable as a factor
+# give me a hint
+entropy_example[, hello_int := as.factor(hello_int)]
+entropy_example[, hello_int_prob := table(hello_int) / nrow(entropy_example)]
+entropy_example
+
+# it still does not work because the table function returns a table 
+# object, not a vector
+# give me a hint
+entropy_example[, hello_int_prob := as.vector(table(hello_int) / nrow(entropy_example))]
+
+# table is a wrong choice of function
+# use prop.table instead
+entropy_example[, hello_int_prob := prop.table(hello_int)]
+entropy_example
+
+# add similar variables like hello_int_prob for the other variables
+# such as hello_int2_prob, hello_int3_prob
+entropy_example[, hello_int2_prob := prop.table(hello_int2)]
+entropy_example[, hello_int3_prob := prop.table(hello_int3)]
+entropy_example
 
 
+# check whether sums of the probabilities are 1 for variables with names
+# containing 'prob'
+entropy_example[, lapply(.SD, sum), .SDcols = grepl('prob', names(.SD))]
+
+# the above examples shows the limitations of ChatGPT
+
+# the following code was searched on the internet
+# based on human beings' understanding of the problem
+entropy_example[, lapply(.SD, sum), .SDcols = patterns("prob")]
+
+# the sum of the probabilities equal to 1, which is correct
+entropy_example
+
+# now we will calculate the entropy of the variables
+# that contain 'prob' in their names
+entropy_example[, lapply(.SD, entropy), .SDcols = grepl('prob', names(.SD))]
 
