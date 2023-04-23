@@ -126,3 +126,38 @@ entropy_example
 # that contain 'prob' in their names
 entropy_example[, lapply(.SD, entropy), .SDcols = grepl('prob', names(.SD))]
 
+
+
+entropy_example
+# create multiple variables to represent the probabilities of each unique
+# value for variables with names containing 'int'
+entropy_example[, lapply(.SD, function(x) prop.table(x)), .SDcols = patterns("int")]
+
+entropy_example[, lapply(.SD, function(x) prop.table(x)),
+                                    .SDcols = patterns("int")]
+
+# assign those columns in place of the original columns
+# the following code gives probabilties of each unique value for
+# the whole talbe in .sd
+# entropy_example[, prop.table(.SD), .SDcols = patterns("int")]
+
+# a fast way to create new column names  based on the old column names
+
+col_names_prob <- entropy_example[, paste(names(.SD), "_prob", sep=""),
+                                    .SDcols = patterns("int")]
+entropy_example[, (col_names_prob) := lapply(.SD, function(x) prop.table(x)),
+                    .SDcols = patterns("int")]
+entropy_example
+
+
+
+
+
+
+
+
+
+
+
+
+
