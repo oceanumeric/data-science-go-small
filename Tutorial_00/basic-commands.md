@@ -49,10 +49,20 @@ wget <image_url>
 
 ## Install R 
 
-```
+```bash
 # update the package list
 sudo apt-get update
 sudo apt-get install r-base
+```
+
+## Install R packages 
+
+```r
+install.packages("data.table")
+install.packages("magrittr")
+install.packages("dplyr")
+install.packages("knitr")
+install.packages("ggplot2")
 ```
 
 ## disable language tool linter extension in vscode 

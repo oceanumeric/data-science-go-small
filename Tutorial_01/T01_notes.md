@@ -47,3 +47,13 @@ $$
 where $\mu$ is the mean and $\sigma$ is the standard deviation. The parameter $\sigma$ is called the scale parameter or the standard deviation of the distribution. The normal distribution is important in statistics and is often used in the natural and social sciences to represent real-valued random variables whose distributions are not known. For example, it approximates a wide variety of events, such as the distribution of samples influenced by a large number of tiny, random disturbances, such as thermal noise, or the forces exerted by many molecules on one's body.
 
 The normal distribution is also a good model for the distribution of sample means for a large number of samples, especially if the true population from which the samples are taken is normally distributed. This is because the distribution of the mean of a large number of samples is approximately normally distributed, regardless of the distribution of the population from which the samples are taken. This is known as the central limit theorem.
+
+
+## Case Study with Our Survey Data
+
+Q1: have you learned regression before?
+
+| q1  | N  | percent |
+|:---:|:--:|:-------:|
+| no  | 7  |  29.17  |
+| yes | 17 |  70.83  |
