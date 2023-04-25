@@ -59,8 +59,54 @@ Here is the connection of all distributions.
 
 ![distributions](../images/distribution_chart.gif)
 
+Now, we will show the connection between binomial and Poisson distribution based on [this lecture notes](https://mathcenter.oxford.emory.edu/site/math117/connectingPoissonAndBinomial/).
 
+For binomial distribution, we have the following probability mass function:
 
+$$
+P(X = x) = \binom{n}{x} p^x (1-p)^{n-x}
+$$
+
+Now let's set up the parameters for the binomial distribution with $n$ and $\lambda$, such as 
+
+$$
+p = \frac{\lambda}{n}
+$$
+
+Then the binomial distribution can be rewritten as:
+
+$$
+P(X = x) = \binom{n}{x} \left( \frac{\lambda}{n} \right)^x \left( 1 - \frac{\lambda}{n} \right)^{n-x}
+$$
+
+Let's expand the above function and take the limit of $n$ as $n \to \infty$:
+
+$$
+\begin{aligned}
+P(X = x) &= \lim_{n \to \infty} \binom{n}{x} \left( \frac{\lambda}{n} \right)^x \left( 1 - \frac{\lambda}{n} \right)^{n-x} \\
+&= \lim_{n \to \infty} \frac{n!}{x! (n-x)!} \left( \frac{\lambda}{n} \right)^x \left( 1 - \frac{\lambda}{n} \right)^{n-x} \\
+& = \lim_{n \to \infty} \frac{n(n-1)(n-x+1)}{x!} \frac{\lambda^x}{n^x} \left( 1 - \frac{\lambda}{n} \right)^{n-x} \\
+& = \lim_{n \to \infty} \frac{n(n-1)(n-x+1)}{n^x} \frac{\lambda^x}{x!} \left( 1 - \frac{\lambda}{n} \right)^{n-x} \\
+& = \lim_{n \to \infty} \frac{n(n-1)(n-x+1)}{n^x} \frac{\lambda^x}{x!} \left( 1 - \frac{\lambda}{n} \right)^{n} \left( 1 - \frac{\lambda}{n} \right)^{-x} \\
+& = \frac{e^{-\lambda} \lambda^x }{x!} 
+\end{aligned}
+$$
+
+The above derivation uses the following facts:
+
+$$
+\begin{aligned}
+\lim_{n \to \infty} \frac{n(n-1)(n-x+1)}{n^x} &= 1 \\
+\lim_{n \to \infty} \left( 1 + \frac{x}{n} \right)^{n} &= e^x \\
+\lim_{n \to \infty} \left(1 - \frac{\lambda}{n} \right)^{-x} &= 1
+\end{aligned}
+$$
+
+Therefore, we can conclude that the Poisson distribution is the limit of the binomial distribution for large $n$. But what is the intuition behind this connection?
+
+Let's take a look at the following example:
+
+> Now, suppose you are a restaurant owner and you want to know how many customers will come to your restaurant from 10am to 11am. 
 
 
 
