@@ -250,3 +250,23 @@ plot(x, y, type = "h", lwd = 2,
 plot(x, y_cum, type = "h", lwd = 2,
         xlab = "Number of Customers", ylab = "Probability",
         main = "cumulative Distribution Function")
+
+# plot gaussian distribution with different mean and sd
+means = c(0, -2, 2)
+sds = c(1, 2, 3)
+x = seq(-10, 10, length.out = 100)
+dfy = data.frame(x = x)
+for (i in 1:length(means)) {
+    dfy[, paste0("mean", i)] = dnorm(x, means[i], sds[i])
+}
+# plot the probability density function with basic R
+# with different mean and sd and different color
+options(repr.plot.width = 8, repr.plot.height = 5)
+plot(x, dfy[, "mean1"], type = "l", lwd = 2,
+        xlab = "x", ylab = "Probability",
+        main = "Probability Density Function")
+lines(x, dfy[, "mean2"], lwd = 2, col = "red")
+lines(x, dfy[, "mean3"], lwd = 2, col = "green")
+# add legend with mean and sd with different color
+legend("topright", legend = paste0("mean=", means, ", sd=", sds),
+        lty = 1, lwd = 2, col = c("black", "red", "green"))
