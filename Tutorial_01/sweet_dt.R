@@ -59,6 +59,9 @@ survey %>%
 
 str(survey)
 
+# save the data set
+fwrite(survey, "survey_cleaned.csv")
+
 
 ######----------------- check duplicates and NAs -----------------######
 # duplicates and NAs are tricky
@@ -103,7 +106,16 @@ survey %>%
     unique(by = "timestamp") %>%
     str()
 
+# save the data set
+survey %>%
+    unique(by = "timestamp") %>%
+    fwrite("survey_cleaned_unique.csv")
+
+
 ######----------------- univariate analysis -----------------######
+
+# read the data set
+survey <- fread("survey_cleaned_unique.csv")
 
 # q1: have you ever learned regression analysis before?
 # q1 answer: yes, no
@@ -270,3 +282,86 @@ lines(x, dfy[, "mean3"], lwd = 2, col = "green")
 # add legend with mean and sd with different color
 legend("topright", legend = paste0("mean=", means, ", sd=", sds),
         lty = 1, lwd = 2, col = c("black", "red", "green"))
+
+
+######----------------- multivariate analysis -----------------######
+
+# read the dataset
+survey <- fread("survey_cleaned_unique.csv")
+
+# now, let's do some multivariate analysis
+str(survey)
+
+# multivariate analysis is to find the relationship between
+# multiple variables
+
+# let's start with two variables
+# for two variables, we have the following possibilities
+# 1. categorical vs categorical
+# 2. categorical vs continuous
+# 3. continuous vs continuous
+
+# NOW, let's focus on categorical vs categorical
+# q1 vs q2
+# q1: have you studied regression analysis before?
+# q2: what kind of language do you use for data analysis?
+
+survey %>%
+    with(table(q1, q2)) %>%
+    kable()
+
+# how could we visualize the above table?
+# we can use mosaicplot
+# mosaicplot is a powerful package to visualize the relationship
+# between multiple variables
+mosaicplot(q2 ~ q1, data = survey, color = TRUE, shade = TRUE,
+            main = "What kind of language do you use for data analysis?",
+            xlab = "Answer", ylab = "Answer")
+
+
+# you can see that data visualization could tell us a lot
+# about the relationship between multiple variables
+# for cases with more than 2 categorical variables
+# you need to use ggplot to visualize the relationship
+# we will not cover this in this course
+
+# since our survey does not have continuous variables
+# we will simulate some data to show the relationship
+# by adding three variables:
+# gender dummy - female 1 / male 0 
+# weight - continuous
+# height - continuous
+
+females <- rep("female", 100)
+males <- rep("male", 100)
+
+# combine the above two vectors into one vector
+c(females, males) %>%
+    sample(nrow(survey)) -> survey$gender
+
+str(survey)
+
+# create dummy variable from gender
+survey %>%
+    .[, gender_dummy := ifelse(gender == "female", 1, 0)] %>%
+    str()
+
+# check balance of gender
+survey %>%
+    with(table(gender))
+
+# generate random weight and height
+# weight is normally distributed with mean 60 and sd 5 
+# height is normally distributed with mean 170 and sd 5 for female
+# height is normally distributed with mean 175 and sd 6 for male 
+survey %>%
+    .[, weight := rnorm(nrow(.), 60, 10)] %>%
+    .[, height := ifelse(gender_dummy,
+                            rnorm(nrow(.), 170, 5),
+                            rnorm(nrow(.), 175, 6))] %>%
+    str()
+
+
+# now, let's do some multivariate analysis
+# with one categorical and one continuous variable
+# two continuous variables
