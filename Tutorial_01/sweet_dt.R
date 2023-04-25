@@ -217,6 +217,7 @@ pbinom(59, 100, 0.708, lower.tail = FALSE)
 
 # plot the binomial probability density function
 # and cumulative distribution function
+# using type = "h" to indicate it is discrete 
 options(repr.plot.width = 9, repr.plot.height = 5)
 n = 100
 p = 0.708
@@ -224,10 +225,28 @@ x = 0:100
 y = dbinom(x, n, p)
 y_cum = pbinom(x, n, p)
 par(mfrow = c(1, 2))
-plot(x, y, type = "l", lwd = 2,
+plot(x, y, type = "h", lwd = 2,
         xlab = "Number of Yes", ylab = "Probability",
         main = "Probability Density Function")
-plot(x, y_cum, type = "l", lwd = 2,
+plot(x, y_cum, type = "h", lwd = 2,
         xlab = "Number of Yes", ylab = "Probability",
         main = "cumulative Distribution Function")
 
+
+# simulate the Poisson distribution
+# and plot the probability density function
+# and cumulative distribution function
+# with restaurant example
+# lambda = 10
+options(repr.plot.width = 9, repr.plot.height = 5)
+lambda = 10
+x = 0:30
+y = dpois(x, lambda)
+y_cum = ppois(x, lambda)
+par(mfrow = c(1, 2))
+plot(x, y, type = "h", lwd = 2,
+        xlab = "Number of Customers", ylab = "Probability",
+        main = "Probability Density Function")
+plot(x, y_cum, type = "h", lwd = 2,
+        xlab = "Number of Customers", ylab = "Probability",
+        main = "cumulative Distribution Function")

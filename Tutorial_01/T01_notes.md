@@ -106,7 +106,85 @@ Therefore, we can conclude that the Poisson distribution is the limit of the bin
 
 Let's take a look at the following example:
 
-> Now, suppose you are a restaurant owner and you want to know how many customers will come to your restaurant from 10am to 11am. 
+> Now, suppose you are a restaurant owner and you want to know how many customers will come to your restaurant from 10am to 11am. How could you model this problem? 
+
+To answer this question, we need to collect some data first. As those data could give us some evidence to answer this question. But how could we collect the data? And what kind of data should we collect?
+
+Before we answer these questions, let's think about our problem again. For our problem, we have the following dimensions (or angles or features):
+
+- time: 10am to 11am
+- space: the restaurant
+- people: customers
+- event: coming to the restaurant
+
+Now, as you can see we have four dimensions. The interaction between these dimensions could make our problem more complicated. The complexity of our problem is related to the number of dimensions. So, if we want to make our problem simpler, we need to reduce the number of dimensions.
+
+To progress our thinking, we always start from a definition of an event. For our problem, we can define the event as "a customer comes to the restaurant". This means we are fixing the time and space dimensions. Now, we only have two dimensions: people and event. This is a much simpler problem.
+
+After defining the event, we will model the problem based on the event. When we model the problem, we ask questions in a probabilistic way. For example, we can ask the following questions:
+
+- What is the probability that a customer comes to the restaurant from 10am to 11am?
+- What is the probability that 10 customers come to the restaurant from 10am to 11am?
+
+How could we answer these questions? We can answer these questions by collecting data. For example, we can collect the data of the number of customers who come to the restaurant from 10am to 11am. Then we can use the data to answer the above questions.
+
+For the first question, we can use the binomial distribution to model the problem. For the second question, we can use the Poisson distribution to model the problem. 
+
+But before using any distribution, let's think about how we could solve it in the naive way by assuming we can collect all the data without any limitation
+in terms of time and space. 
+
+To answer question: what is the probability that a customer comes to the restaurant from 10am to 11am? We can do this:
+
+- day 1 at 10am to 11am, we observe whether $x >= 1$ customers come to the restaurant. If yes, we record 1, otherwise we record 0.
+- day 2 at 10am to 11am, we observe whether $x >= 1$ customers come to the restaurant. If yes, we record 1, otherwise we record 0.
+- after 100 days, we calculate the average of the 100 records. This is the probability that a customer comes to the restaurant from 10am to 11am.
+
+See it is very simple. But this is very time consuming. We need to observe the restaurant for 100 days. And we need to record the data for 100 days. This is not practical. How could we solve this problem in a more practical way?
+
+Instead of observing the restaurant for 100 days, we can observe the restaurant for 1 day. This means we have to observe 100 restaurants. And we need to record the data for 100 restaurants. This is more practical. But doing this assumes that all 100 restaurants are the same (such as location, size, food type, etc.). If we observe 100 restaurants, we can assume that the 100 restaurants are the same. Then we can use the average of the 100 records to answer the question. This is the probability that a customer comes to the restaurant from 10am to 11am.
+
+There is another method to solve this problem by doing a survey. We can ask people to answer the following question: how likely is it that you will come to the restaurant from 10am to 11am? We can ask 100 people to answer this question. Then we can use the average of the 100 answers to answer the question. This is the probability that a customer comes to the restaurant from 10am to 11am.
+
+At this stage, you should realize that dimension matters. When we model the problem, we generally hold some dimensions fixed at the beginning and then slowly release the constraints. This is the process of reducing the number of dimensions.
+
+Now, let's go back to our problem. We will try to answer the second question: what is the probability that 10 customers come to the restaurant from 10am to 11am? We can do this:
+
+- day 1 at 10am to 11am, we observe whether $x >= 10$ customers come to the restaurant. If yes, we record 1, otherwise we record 0.
+- day 2 at 10am to 11am, we observe whether $x >= 10$ customers come to the restaurant. If yes, we record 1, otherwise we record 0.
+
+After 100 days, we calculate the average of the 100 records. This is the probability that 10 customers come to the restaurant from 10am to 11am.
+
+Or we can also do this:
+
+- day 1 at 10am to 11am, we observe the number of customers who come to the restaurant. We record the number of customers.
+- day 2 at 10am to 11am, we observe the number of customers who come to the restaurant. We record the number of customers.
+
+Or we can observe 100 restaurants for 1 day and then calculate the average of the 100 records. This is the probability that 10 customers come to the restaurant from 10am to 11am. Notice that for this question, doing a survey is not practical. Because we care about the number of customers, not the probability of one customer coming to the restaurant. 
+
+
+Before we proceed, let's review the four dimensions of our problem:
+
+- time: 10am to 11am
+- space: the restaurant
+- people: customers
+- event: coming to the restaurant
+
+When we try to solve the problem, we
+
+- either hold space fixed and then do reordering 100 days
+- either hold time fixed and then do reordering 100 restaurants
+
+Now, we will fix the event and time dimensions, which means we assume each event (coming to the restaurant) is independent within a fixed time interval (10am to 11am). Then we will do reordering 100 days. Then we are interested in the probability that number of customers coming to the restaurant. This is a Poisson distribution problem. Why? Think about how could you solve this problem in the naive way.
+
+
+
+
+
+
+
+
+
+
 
 
 
