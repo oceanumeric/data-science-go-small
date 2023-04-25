@@ -217,16 +217,17 @@ pbinom(59, 100, 0.708, lower.tail = FALSE)
 
 # plot the binomial probability density function
 # and cumulative distribution function
+options(repr.plot.width = 9, repr.plot.height = 5)
 n = 100
 p = 0.708
 x = 0:100
 y = dbinom(x, n, p)
 y_cum = pbinom(x, n, p)
 par(mfrow = c(1, 2))
-plot(x, y, type = "h", lwd = 2,
+plot(x, y, type = "l", lwd = 2,
         xlab = "Number of Yes", ylab = "Probability",
         main = "Probability Density Function")
 plot(x, y_cum, type = "l", lwd = 2,
         xlab = "Number of Yes", ylab = "Probability",
-        main = "Cumulative Distribution Function")
+        main = "cumulative Distribution Function")
 

@@ -49,6 +49,21 @@ where $\mu$ is the mean and $\sigma$ is the standard deviation. The parameter $\
 The normal distribution is also a good model for the distribution of sample means for a large number of samples, especially if the true population from which the samples are taken is normally distributed. This is because the distribution of the mean of a large number of samples is approximately normally distributed, regardless of the distribution of the population from which the samples are taken. This is known as the central limit theorem.
 
 
+## Connection between Binomial and Poisson Distribution
+
+Both binomial and Poisson distributions are discrete probability distributions. The binomial distribution is used to model the number of successes in a sequence of independent trials, while the Poisson distribution is used to model the number of events occurring in a fixed interval of time or space.
+
+There is a close connection between the binomial and Poisson distributions. The Poisson distribution can be derived from the binomial distribution by taking the limit of the number of trials as the number of trials approaches infinity, while keeping the probability of success constant.
+
+Here is the connection of all distributions.
+
+![distributions](../images/distribution_chart.gif)
+
+
+
+
+
+
 ## Case Study with Our Survey Data
 
 Q1: have you learned regression before?
