@@ -26,6 +26,8 @@ __Tutorial 5__:
 
 ## Whatsapp Group
 
+Studying in a group is encouraged. There is a whatsapp group for this course. In case you want to ask questions to your peers, please join the group.
+
 ![whatsapp](images/inin-whatsapp.png)
 
 
