@@ -5,7 +5,7 @@ All great things come from the small beginnings
 
 ## Slides 
 
-Tutorial 1: [Google Slides](https://docs.google.com/presentation/d/12RCQQDQuBv5jmyMNuzxGDIsjldhoUQgaHn7JhbDFXDo/edit?usp=sharing)
+__Tutorial 1__: [Google Slides](https://docs.google.com/presentation/d/12RCQQDQuBv5jmyMNuzxGDIsjldhoUQgaHn7JhbDFXDo/edit?usp=sharing)
 
 Reading: 
 
@@ -15,7 +15,13 @@ Reading:
 - other pdf files in `Tutorial_01` folder
 
 
-Tutorial 2: 
+__Tutorial 2__: 
+
+__Tutorial 3__: 
+
+__Tutorial 4__: 
+
+__Tutorial 5__: 
 
 
 
