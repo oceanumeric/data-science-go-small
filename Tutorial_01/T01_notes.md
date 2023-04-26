@@ -23,6 +23,8 @@ P(X = x) &= \binom{n}{x} p^x (1-p)^{n-x} \\
 \end{aligned}
 $$
 
+The expected value of a binomial random variable is $E(X) = np$ and the variance is $Var(X) = np(1-p)$.
+
 ## Definition of Poisson Distribution
 
 The Poisson distribution is a discrete probability distribution that expresses the probability of a given number of events occurring in a fixed interval of time and/or space if these events occur with a known constant rate and independently of the time since the last event. The Poisson distribution can also be used for the number of events in other specified intervals such as distance, area or volume.
@@ -35,6 +37,10 @@ P(X = x) &= \frac{\lambda^x e^{-\lambda}}{x!} \\
 &= \frac{\lambda^x}{x!} e^{-\lambda}
 \end{aligned}
 $$
+
+where $\lambda$ is the average number of events per interval.
+
+The expected value of a Poisson random variable is $E(X) = \lambda$ and the variance is $Var(X) = \lambda$.
 
 ## Definition of Normal Distribution
 
@@ -177,14 +183,7 @@ When we try to solve the problem, we
 Now, we will fix the event and time dimensions, which means we assume each event (coming to the restaurant) is independent within a fixed time interval (10am to 11am). Then we will do reordering 100 days. Then we are interested in the probability that number of customers coming to the restaurant. This is a Poisson distribution problem. Why? Think about how could you solve this problem in the naive way.
 
 
-
-
-
-
-
-
-
-
+Just ask: what's the probability for you to come to the restaurant at 10:16:00:0003 am? If we divide the time interval into million seconds, how many events do we have? (How about $n \to \infty$?)
 
 
 
@@ -196,3 +195,26 @@ Q1: have you learned regression before?
 |:---:|:--:|:-------:|
 | no  | 7  |  29.17  |
 | yes | 17 |  70.83  |
+
+Please read the code for this part
+
+
+## Linear regression with simulation
+
+We want to simulate the following relationship
+
+$$
+weight = 16 + 0.32 * height + \epsilon
+$$
+
+where $\epsilon \sim N(0, 2)$
+
+To make our simulation more realistic, we will simulate height based on gender. 
+
+$$
+\begin{aligned}
+height & \sim N(167, 2.3) \quad \text{for female} \\
+height & \sim N(173, 3.2) \quad \text{for male}
+\end{aligned}
+$$
+

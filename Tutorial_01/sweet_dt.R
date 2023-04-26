@@ -353,7 +353,9 @@ survey %>%
 # generate random weight and height
 # weight is normally distributed with mean 60 and sd 5 
 # height is normally distributed with mean 170 and sd 5 for female
-# height is normally distributed with mean 175 and sd 6 for male 
+# height is normally distributed with mean 175 and sd 6 for male
+# set.seed(123)
+set.seed(123)
 survey %>%
     .[, weight := rnorm(nrow(.), 60, 10)] %>%
     .[, height := ifelse(gender_dummy,
@@ -365,3 +367,84 @@ survey %>%
 # now, let's do some multivariate analysis
 # with one categorical and one continuous variable
 # two continuous variables
+
+# let's start with categorical vs continuous
+# gender vs weight
+# we can use boxplot to visualize the relationship
+# boxplot is a powerful package to visualize the relationship
+# between one categorical and one continuous variable
+# plot boxplot with basic R against gender and weight
+options(repr.plot.width = 8, repr.plot.height = 6)
+survey %>%
+    with(boxplot(weight ~ gender))
+
+survey %>%
+    with(boxplot(height ~ gender))
+
+# check histogram
+survey %>%
+    with(hist(weight))
+
+# plot histogram with ggplot by filling with gender
+survey %>%
+    ggplot(aes(x = weight, fill = gender)) +
+    geom_histogram(binwidth = 2, alpha = 0.7) +
+    theme_bw()
+
+survey %>%
+    ggplot(aes(x = height, fill = gender)) +
+    geom_histogram(binwidth = 2, alpha = 0.7) +
+    theme_bw()
+
+# two continuous variables
+# weight vs height
+survey %>%
+    with(plot(weight, height))
+
+survey %>%
+    with(cor(weight, height))
+
+# this is not aligned with our intuition
+# as we know that weight and height are positively correlated
+
+######----------------- Linear Regression -----------------######
+# linear regression is a powerful tool to find the relationship
+# multiple variables
+# as we can see using correlation or boxplot or histogram
+# over different categories
+# can only tell us the relationship between two variables
+# how about the relationship between multiple variables?
+# we can use linear regression to find the relationship
+
+# we will learn linear regression via simulation
+# please read the notes for more details
+# we will simulate 300 observations
+# sample size for one group is 300
+sample_size = 300
+height_female <- rnorm(n = sample_size, mean = 167, sd = 2.3)
+height_male <- rnorm(n = sample_size, mean = 173, sd = 3.2)
+female <- rep("female", sample_size)
+male <- rep("male", sample_size)
+
+# create a data.table
+sdt <- data.table(
+    height = c(height_female, height_male),
+    male = c(female, male)
+)
+
+str(sdt)
+
+# add weight
+sdt %>%
+    .[, weight := 16 + 0.32 * height + rnorm(nrow(.), 0, 2)] %>%
+    str()
+
+# choose 300 observations randomly
+sdt %>%
+    sample_n(300) -> simulated_data
+
+str(simulated_data)
+
+# plot the relationship between height and weight
+simulated_data %>%
+    with(plot(height, weight))

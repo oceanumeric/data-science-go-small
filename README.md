@@ -24,6 +24,11 @@ __Tutorial 4__:
 __Tutorial 5__: 
 
 
+## Whatsapp Group
+
+![whatsapp](images/inin-whatsapp.png)
+
+
 
 
 ## AI Copilot
