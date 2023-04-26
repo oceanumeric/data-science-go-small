@@ -218,3 +218,8 @@ height & \sim N(173, 3.2) \quad \text{for male}
 \end{aligned}
 $$
 
+
+## generate dummy in Stata
+
+
+

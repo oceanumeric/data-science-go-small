@@ -420,16 +420,17 @@ survey %>%
 # please read the notes for more details
 # we will simulate 300 observations
 # sample size for one group is 300
+set.seed(789)
 sample_size = 300
 height_female <- rnorm(n = sample_size, mean = 167, sd = 2.3)
-height_male <- rnorm(n = sample_size, mean = 173, sd = 3.2)
+height_male <- rnorm(n = sample_size, mean = 203, sd = 6.9)
 female <- rep("female", sample_size)
 male <- rep("male", sample_size)
 
 # create a data.table
 sdt <- data.table(
     height = c(height_female, height_male),
-    male = c(female, male)
+    gender = c(female, male)
 )
 
 str(sdt)
@@ -448,3 +449,16 @@ str(simulated_data)
 # plot the relationship between height and weight
 simulated_data %>%
     with(plot(height, weight))
+
+# now let's run our first linear regression
+# we will use lm() function
+lm(weight ~ height, data = simulated_data) %>% summary()
+
+simulated_data %>%
+    with(plot(height, weight))
+abline(lm(weight ~ height, data = simulated_data), col = "red")
+
+# with gender as a dummy variable
+lm(weight ~ height + gender, data = simulated_data) %>% summary()
+
+
