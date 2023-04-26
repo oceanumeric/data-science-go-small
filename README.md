@@ -2,10 +2,6 @@
 
 All great things come from the small beginnings 
 
-so,  
-
-![dare to ask](images/dare-to-ask-logo.png)
-
 
 ## Slides 
 
@@ -17,3 +13,14 @@ Reading:
 - [Using Python and R in VSCode](https://oceanumeric.github.io/blog/r-python-vscode)
 - [Facets of R](https://svn.r-project.org/Rjournal/trunk/html/archive/2009-1/RJournal_2009-1_Chambers.pdf)
 - other pdf files in `Tutorial_01` folder
+
+
+Tutorial 2: 
+
+
+
+
+## AI Copilot
+
+
+![dare to ask](images/dare-to-ask-logo.png)
