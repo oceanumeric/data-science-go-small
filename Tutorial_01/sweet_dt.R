@@ -423,7 +423,7 @@ survey %>%
 set.seed(789)
 sample_size = 300
 height_female <- rnorm(n = sample_size, mean = 167, sd = 2.3)
-height_male <- rnorm(n = sample_size, mean = 203, sd = 6.9)
+height_male <- rnorm(n = sample_size, mean = 173, sd = 3.2)
 female <- rep("female", sample_size)
 male <- rep("male", sample_size)
 
@@ -437,7 +437,12 @@ str(sdt)
 
 # add weight
 sdt %>%
-    .[, weight := 16 + 0.32 * height + rnorm(nrow(.), 0, 2)] %>%
+    .[, weight1 := 16 + 0.32 * height + rnorm(nrow(.), 0, 2)] %>%
+    .[, weight2 := ifelse(
+                            gender == "female",
+                            16 + 0.32 * height + rnorm(nrow(.), 0, 2),
+                            16 - 0.17 * height + rnorm(nrow(.), 0, 2.5)
+                        )] %>%
     str()
 
 # choose 300 observations randomly
@@ -448,17 +453,34 @@ str(simulated_data)
 
 # plot the relationship between height and weight
 simulated_data %>%
-    with(plot(height, weight))
+    with(plot(height, weight1))
+
+simulated_data %>%
+    with(plot(height, weight2))
+
 
 # now let's run our first linear regression
 # we will use lm() function
-lm(weight ~ height, data = simulated_data) %>% summary()
+lm(weight1 ~ height, data = simulated_data) %>% summary()
 
 simulated_data %>%
-    with(plot(height, weight))
-abline(lm(weight ~ height, data = simulated_data), col = "red")
+    with(plot(height, weight1))
+abline(lm(weight1 ~ height, data = simulated_data), col = "red")
 
 # with gender as a dummy variable
-lm(weight ~ height + gender, data = simulated_data) %>% summary()
+lm(weight1 ~ height + gender, data = simulated_data) %>% summary()
+
+lm(weight2 ~ height, data = simulated_data) %>% summary()
+
+simulated_data %>%
+    with(plot(height, weight2))
+abline(lm(weight2 ~ height, data = simulated_data), col = "red")
+
+lm(weight2 ~ height + gender, data = simulated_data) %>% summary()
+
+
+simulated_data %>%
+    .[gender == "male"] %>%
+    with(lm(weight2 ~ height)) %>% summary()
 
 

@@ -204,7 +204,7 @@ Please read the code for this part
 We want to simulate the following relationship
 
 $$
-weight = 16 + 0.32 * height + \epsilon
+weight = 16 + 0.32 \times height + \epsilon
 $$
 
 where $\epsilon \sim N(0, 2)$
@@ -218,8 +218,15 @@ height & \sim N(173, 3.2) \quad \text{for male}
 \end{aligned}
 $$
 
+At the same time, we will also simulate another model 
 
-## generate dummy in Stata
+$$
+\begin{aligned}
+
+weight_{female} & = 16 + 0.32 \times height + \epsilon \\
+weight_{male} & = 16 - 0.17  \times height + \epsilon
+\end{aligned}
+$$
 
 
 
