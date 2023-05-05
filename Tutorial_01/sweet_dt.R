@@ -484,3 +484,7 @@ simulated_data %>%
     with(lm(weight2 ~ height)) %>% summary()
 
 
+# simulate data to explain selection bias
+
+
+

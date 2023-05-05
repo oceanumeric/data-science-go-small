@@ -38,3 +38,4 @@ Studying in a group is encouraged. There is a whatsapp group for this course. In
 
 
 ![dare to ask](images/dare-to-ask-logo.png)
+
