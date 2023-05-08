@@ -154,6 +154,57 @@ survey %>%
 ```
 
 
+--- 
+
+# 2.2.2. Binomial Distribution
+
+- Binomial distribution is a discrete probability distribution that expresses the probability of one set of two outcomes, as a function of the number of trials.
+
+- In our survey, 70% of the students have studied the regression analysis before. We can use binomial distribution to calculate the probability of the number of students who have studied the regression analysis before.
+
+- One class has 100 students. What is the probability that 30 of them have studied the regression analysis before?
+
+
+---
+
+# 2.2.2. Binomial Distribution
+
+- `dbinom(x, size, prob)` is the function to calculate the probability of x successes in size trials with the probability of success prob.
+
+- `pbinom(x, size, prob)` is the function to calculate the cumulative probability of x successes in size trials with the probability of success prob.
+
+```r
+# probability of 30 students have studied the regression analysis before
+dbinom(30, 100, 0.7)  # discrete probability
+pbinom(30, 100, 0.7)  # cumulative probability
+```
+
+- The formula of binomial distribution is:
+
+$$
+P(X=k) = \binom{n}{k}p^k(1-p)^{n-k}
+$$
+
+--- 
+
+# 2.2.2. Binomial Distribution (discrete probability)
+
+![center width:1000](../images/t01-binomial-dist1.png)
+
+
+--- 
+
+# 2.2.2. Binomial Distribution (discrete probability)
+
+- Properties of binomial distribution:
+    - The mean of binomial distribution is $np$.
+    - The variance of binomial distribution is $np(1-p)$.
+    - The standard deviation of binomial distribution is $\sqrt{np(1-p)}$.
+
+- For instance, the mean of the number of students who have studied the regression analysis before is $100 \times 0.7 = 70$.
+
+
+
 ---
 
 # 3. Bivariate Statistics
