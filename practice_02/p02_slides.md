@@ -124,7 +124,7 @@ https://github.com/marp-team/marp-cli
 docker pull marpteam/marp-cli
 ```
 
-- Convert slide deck into HTML
+- Convert slide deck into PDF
 
 ```bash
  docker run --rm -v $PWD:/home/marp/app/ -e LANG=$LANG marpteam/marp-cli practice_02/p02_slides.md --pdf  --theme ./the
