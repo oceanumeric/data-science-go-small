@@ -124,3 +124,8 @@ section.title>p {
 section.tinytext>p, section.tinytext>ul, section.tinytext>blockquote {
   font-size: 0.65em;
 }
+
+/* url link color */
+a {
+  color: #0f0404;
+}
