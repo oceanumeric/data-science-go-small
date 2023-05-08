@@ -9,7 +9,7 @@ library(ggplot2)
 ######----------------- read and clean the data  -----------------######
 
 # read the dataset
-csv_url <- "https://shorturl.at/bclM4"
+csv_url <- "https://shorturl.at/eixVX"
 survey <- fread(csv_url)
 
 # check the data
@@ -115,7 +115,7 @@ survey %>%
 ######----------------- univariate analysis -----------------######
 
 # read the data set
-survey <- fread("survey_cleaned_unique.csv")
+survey <- fread("./data/survey_cleaned_unique.csv")
 
 # q1: have you ever learned regression analysis before?
 # q1 answer: yes, no
