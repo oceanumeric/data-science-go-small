@@ -1,43 +1,43 @@
 <mxfile host="65bd71144e">
     <diagram id="71fBR73Rt8MImOTiK5TD" name="Page-1">
-        <mxGraphModel dx="1169" dy="980" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="#ffffff" math="0" shadow="0">
+        <mxGraphModel dx="1133" dy="980" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="#ffffff" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="3" value="Binomial to Posson" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontStyle=1;fontSize=37;" vertex="1" parent="1">
+                <mxCell id="3" value="Binomial to Posson" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontStyle=1;fontSize=37;" parent="1" vertex="1">
                     <mxGeometry x="380" y="31" width="390" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="6" value="&lt;font style=&quot;font-size: 17px;&quot; face=&quot;Times New Roman&quot;&gt;&lt;i&gt;&lt;span style=&quot;&quot;&gt;Now, suppose you are a restaurant owner. You want to know how many customers will come to your restaurant from 10am to 11am. How could you estimate the number of customers?&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;/i&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=17;fontColor=#000000;fontStyle=1" vertex="1" parent="1">
+                <mxCell id="6" value="&lt;font style=&quot;font-size: 17px;&quot; face=&quot;Times New Roman&quot;&gt;&lt;i&gt;&lt;span style=&quot;&quot;&gt;Now, suppose you are a restaurant owner. You want to know how many customers will come to your restaurant from 10am to 11am. How could you estimate the number of customers?&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;/i&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=17;fontColor=#000000;fontStyle=1" parent="1" vertex="1">
                     <mxGeometry x="210" y="54" width="830" height="100" as="geometry"/>
                 </mxCell>
-                <mxCell id="11" value="- time 10am to 11am&amp;nbsp;&lt;br&gt;- space: restaurant&lt;br&gt;- agent: customer&lt;br&gt;- event: coming to the restaurant" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;labelBackgroundColor=none;fontFamily=Lucida Console;fontSize=17;fontColor=#000000;" vertex="1" parent="1">
+                <mxCell id="11" value="- time 10am to 11am&amp;nbsp;&lt;br&gt;- space: restaurant&lt;br&gt;- agent: customer&lt;br&gt;- event: coming to the restaurant" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;labelBackgroundColor=none;fontFamily=Lucida Console;fontSize=17;fontColor=#000000;" parent="1" vertex="1">
                     <mxGeometry x="460" y="130" width="390" height="140" as="geometry"/>
                 </mxCell>
-                <mxCell id="14" value="" style="group" vertex="1" connectable="0" parent="1">
-                    <mxGeometry x="60" y="260" width="205" height="236" as="geometry"/>
+                <mxCell id="14" value="" style="group" parent="1" vertex="1" connectable="0">
+                    <mxGeometry x="102" y="252" width="205" height="236" as="geometry"/>
                 </mxCell>
-                <mxCell id="12" value="Note Line 1&#10;Note Line 2&#10;Note Line 3" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.text.stickyNote2;fontColor=#666666;mainText=;fontSize=17;whiteSpace=wrap;fillColor=#ffffcc;strokeColor=#F62E00;labelBackgroundColor=none;fontFamily=Lucida Console;" vertex="1" parent="14">
+                <mxCell id="12" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;Survey&lt;br&gt;&lt;br&gt;would you like to come to my restaurant from 10am to 11am?&lt;/font&gt;" style="strokeWidth=1;shadow=0;dashed=0;align=left;html=1;shape=mxgraph.mockup.text.stickyNote2;fontColor=#666666;mainText=;fontSize=17;whiteSpace=wrap;fillColor=#ffffcc;strokeColor=#F62E00;labelBackgroundColor=none;fontFamily=Lucida Console;" parent="14" vertex="1">
                     <mxGeometry x="5" y="36" width="200" height="200" as="geometry"/>
                 </mxCell>
-                <mxCell id="13" value="Fix time and space" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;labelBackgroundColor=none;fontFamily=Georgia;fontSize=17;fontColor=#000000;fontStyle=1" vertex="1" parent="14">
+                <mxCell id="13" value="Fix time and space" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;labelBackgroundColor=none;fontFamily=Georgia;fontSize=17;fontColor=#000000;fontStyle=1" parent="14" vertex="1">
                     <mxGeometry width="200" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="15" value="" style="group" vertex="1" connectable="0" parent="1">
-                    <mxGeometry x="440" y="270" width="205" height="236" as="geometry"/>
+                <mxCell id="15" value="" style="group" parent="1" vertex="1" connectable="0">
+                    <mxGeometry x="482" y="262" width="205" height="236" as="geometry"/>
                 </mxCell>
-                <mxCell id="16" value="Note Line 1&#10;Note Line 2&#10;Note Line 3" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.text.stickyNote2;fontColor=#666666;mainText=;fontSize=17;whiteSpace=wrap;fillColor=#ffffcc;strokeColor=#F62E00;labelBackgroundColor=none;fontFamily=Lucida Console;" vertex="1" parent="15">
+                <mxCell id="16" value="From 10am to 11am, go to every restaurant and count how many customer each restaurant has" style="strokeWidth=1;shadow=0;dashed=0;align=left;html=1;shape=mxgraph.mockup.text.stickyNote2;fontColor=#666666;mainText=;fontSize=17;whiteSpace=wrap;fillColor=#ffffcc;strokeColor=#F62E00;labelBackgroundColor=none;fontFamily=Lucida Console;" parent="15" vertex="1">
                     <mxGeometry x="5" y="36" width="200" height="200" as="geometry"/>
                 </mxCell>
-                <mxCell id="17" value="Fix&amp;nbsp; time and agent" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;labelBackgroundColor=none;fontFamily=Georgia;fontSize=17;fontColor=#000000;fontStyle=1" vertex="1" parent="15">
+                <mxCell id="17" value="Fix&amp;nbsp; time and agent" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;labelBackgroundColor=none;fontFamily=Georgia;fontSize=17;fontColor=#000000;fontStyle=1" parent="15" vertex="1">
                     <mxGeometry width="200" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="18" value="" style="group" vertex="1" connectable="0" parent="1">
-                    <mxGeometry x="800" y="260" width="205" height="236" as="geometry"/>
+                <mxCell id="18" value="" style="group" parent="1" vertex="1" connectable="0">
+                    <mxGeometry x="842" y="252" width="205" height="236" as="geometry"/>
                 </mxCell>
-                <mxCell id="19" value="Note Line 1&#10;Note Line 2&#10;Note Line 3" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.text.stickyNote2;fontColor=#666666;mainText=;fontSize=17;whiteSpace=wrap;fillColor=#ffffcc;strokeColor=#F62E00;labelBackgroundColor=none;fontFamily=Lucida Console;" vertex="1" parent="18">
+                <mxCell id="19" value="A customer could come to my restaurant at 10:01, or 10:17, or 10:49?" style="strokeWidth=1;shadow=0;dashed=0;align=left;html=1;shape=mxgraph.mockup.text.stickyNote2;fontColor=#666666;mainText=;fontSize=17;whiteSpace=wrap;fillColor=#ffffcc;strokeColor=#F62E00;labelBackgroundColor=none;fontFamily=Lucida Console;" parent="18" vertex="1">
                     <mxGeometry x="5" y="36" width="200" height="200" as="geometry"/>
                 </mxCell>
-                <mxCell id="20" value="Fix space and agent" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;labelBackgroundColor=none;fontFamily=Georgia;fontSize=17;fontColor=#000000;fontStyle=1" vertex="1" parent="18">
+                <mxCell id="20" value="Fix space and agent" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;labelBackgroundColor=none;fontFamily=Georgia;fontSize=17;fontColor=#000000;fontStyle=1" parent="18" vertex="1">
                     <mxGeometry width="200" height="30" as="geometry"/>
                 </mxCell>
             </root>
