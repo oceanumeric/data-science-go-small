@@ -64,3 +64,29 @@ section.blue::after, section.blue>footer, section.blue>header {
 section.tinytext>p, section.tinytext>ul, section.tinytext>blockquote {
   font-size: 0.65em;
 }
+
+table {
+  width: auto;
+  text-align: center;
+  margin: 0.5em auto 0.5em auto;
+  border-collapse: collapse;
+}
+
+table > tbody > tr:first-child > td, table > tbody > tr:first-child > th {
+  border-top: 2.3px solid black !important;
+}
+
+th {
+  border-top: 2.7px solid black !important;
+}
+
+table th, table td {
+  border-left: none;
+  border-right: none;
+  border-top: 1.36px solid #000;
+  border-bottom: 1.36px solid #000;
+  background-color: white !important;
+}
+table th, table td {
+  padding: 0.25em 0.5em;
+}

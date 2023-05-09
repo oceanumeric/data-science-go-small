@@ -65,7 +65,7 @@ Summer Semester 2023
 
 ---
 
-# In-class Lab 1.1 :butterfly:
+# In-class Lab 1  :butterfly:
 
 ```r
 # library
@@ -241,10 +241,55 @@ $$
     - event: customers come to the restaurant
 
 
+---
+
+# 2.2.2. From Binomial Distribution to Poisson Distribution
+
+![center width:700](../images/binomial-to-poisson1.png)
+
 
 ---
 
-# 2.2.3. Normal Distribution
+# 2.2.2. From Binomial Distribution to Poisson Distribution
+
+![center width:700](../images/binomial-to-poisson2.png)
+
+---
+
+# 2.2.3. Poisson Distribution
+
+- Poisson distribution is a discrete probability distribution that expresses the probability of a given number of events occurring in a fixed interval of time or space if these events occur with a known constant mean rate and independently of the time since the last event.
+
+- For example,
+    - the number of customers who come to the restaurant from 10am to 11am
+    - the number of students who come to the class from 10am to 11am
+    - the number of cars that pass through a crossroads between 10am and 11am
+
+
+---
+
+# 2.2.3. Poisson Distribution
+
+- Parameters of Poisson distribution:
+    - $\lambda$ is the mean number of events in an interval
+- Inference: 
+    - $k$ is the number of events in an interval
+    - $e$ is the Euler's number ($e = 2.71828...$)
+
+$$
+P(x = k) = \frac{\lambda^k e^{-\lambda}}{k!}
+$$
+
+
+---
+
+# 2.2.3. Poisson Distribution
+
+![center width:900](../images/t01-poission-dist.png)
+
+--- 
+
+# 2.2.4. Normal Distribution
 
 - Normal distribution is also called Gaussian distribution. It is a continuous probability distribution that is symmetrical on both sides of the mean, so the right side of the center is a mirror image of the left side.
 
@@ -254,7 +299,46 @@ $$
 
 ---
 
+# 2.2.4. Normal Distribution
+
+![center width:800](../images/t01-guassian-dist.png)
+
+--- 
+
 # 3. Bivariate Statistics
+
+
+--- 
+
+# 3.1. What is Bivariate Statistics?
+
+- Bivariate analysis is one of the simplest forms of quantitative analysis. It involves the analysis of two variables (often denoted as X, Y), for the purpose of determining the empirical relationship between them. It is basically the analysis of two variables simultaneously, in order to determine the empirical relationship between them.
+    - cross tabulation (contingency table) for discrete data
+    - correlation for continuous data
+    - covariance for continuous data
+
+
+---
+
+# 3.2. Cross Tabulation
+
+- Cross tabulation is a tool that allows you compare the relationship between two variables. It is also known as contingency table. It is a table showing the distribution of one variable in rows and another in columns, used to study the correlation between the two variables.
+
+
+|    | gretl, jmp| na| none| python|  r| r, spss| stata|
+|:---|----------:|--:|----:|------:|--:|-------:|-----:|
+|no  |          0|  1|    2|      2|  1|       0|     0|
+|yes |          1|  0|    1|      2|  9|       1|     2|
+
+
+
+---
+
+# 3.2. Cross Tabulation
+
+- We could use mosaic plot to visualize the cross tabulation.
+
+![center width:700](../images/t01-cross-table.png)
 
 
 ---
@@ -264,8 +348,53 @@ $$
 
 ---
 
+# 4.1. What is Multivariate Statistics?
+
+- Multivariate analysis is based on the principles of multivariate statistics, which involves observation and analysis of more than one statistical outcome variable at a time. Typically, it involves a combination of two or more variables. 
+- Methods:
+    - multiple regression
+    - factor analysis
+    - cluster analysis
+    - Neural Networks
+
+
+---
+
 # 5. Regression Analysis
 
+
+---
+
+# 5.1. What is Regression Analysis?
+
+- Regression analysis is a form of predictive modelling technique which investigates the relationship between a dependent (target) and independent variable (s) (predictor). This technique is used for __forecasting__, time series modelling and finding __the causal effect relationship__ between the variables.
+
+    - we will focus on forecasting in this tutorial
+    - and causal effect relationship in the next tutorial
+
+
+---
+
+# 5.2 Linear Regression
+
+- There many resources on the internet about linear regression. Here, we will focus on the implementation of linear regression in R.
+
+    - Recommendation:
+        - [An Introduction to Statistical Learning](https://www.statlearning.com/)
+        - [Regression in R](https://youtu.be/gNZfqHhq_B4)
+
+- Basic idea: dependent variable is a linear function of independent variables.
+
+$$
+y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + ... + \beta_n x_n + \epsilon; \quad \epsilon \sim N(0, \sigma^2)
+$$
+
+- The simplest neural network is linear regression.
+
+
+---
+
+# In-class Lab 2 :butterfly:
 
 ---
 

@@ -287,7 +287,7 @@ legend("topright", legend = paste0("mean=", means, ", sd=", sds),
 ######----------------- multivariate analysis -----------------######
 
 # read the dataset
-survey <- fread("survey_cleaned_unique.csv")
+survey <- fread("./data/survey_cleaned_unique.csv")
 
 # now, let's do some multivariate analysis
 str(survey)
@@ -314,9 +314,11 @@ survey %>%
 # we can use mosaicplot
 # mosaicplot is a powerful package to visualize the relationship
 # between multiple variables
+options(repr.plot.width = 8, repr.plot.height = 6)
 mosaicplot(q2 ~ q1, data = survey, color = TRUE, shade = TRUE,
             main = "What kind of language do you use for data analysis?",
-            xlab = "Answer", ylab = "Answer")
+            xlab = "Answer",
+            ylab = "Did you study the regression analysis before?")
 
 
 # you can see that data visualization could tell us a lot
