@@ -241,6 +241,17 @@ $$
     - event: customers come to the restaurant
 
 
+
+---
+
+# 2.2.3. Normal Distribution
+
+- Normal distribution is also called Gaussian distribution. It is a continuous probability distribution that is symmetrical on both sides of the mean, so the right side of the center is a mirror image of the left side.
+
+$$
+f(x) = \frac{1}{\sigma \sqrt{2 \pi}} e^{-\frac{1}{2} (\frac{x-\mu}{\sigma})^2}
+$$
+
 ---
 
 # 3. Bivariate Statistics
