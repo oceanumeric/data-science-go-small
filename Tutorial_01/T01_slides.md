@@ -204,6 +204,42 @@ $$
 - For instance, the mean of the number of students who have studied the regression analysis before is $100 \times 0.7 = 70$.
 
 
+--- 
+
+# 2.2.2. From Binomial Distribution to Poisson Distribution
+
+> Now, suppose you are a restaurant owner. You want to know how many customers will come to your restaurant from 10am to 11am. How could you estimate the number of customers?
+
+&nbsp;
+
+![center width:400](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSAgh-qWAu9X-JTIg9Ds3mxFLKvnz3nbU7zQ&usqp=CAU)
+
+
+--- 
+
+# 2.2.2. From Binomial Distribution to Poisson Distribution
+
+> Now, suppose you are a restaurant owner. You want to know how many customers will come to your restaurant from 10am to 11am. How could you estimate the number of customers?
+
+1. Do a survey?
+    - fixed time and space
+2. Use the competitor's data?
+    - different restaurant
+    - fixed time and people
+
+
+--- 
+
+# 2.2.2. From Binomial Distribution to Poisson Distribution
+
+> Now, suppose you are a restaurant owner. You want to know how many customers will come to your restaurant from 10am to 11am. How could you estimate the number of customers?
+
+- Our univariate dimension:
+    - time: 10am to 11am
+    - space: the restaurant
+    - people: customers
+    - event: customers come to the restaurant
+
 
 ---
 
