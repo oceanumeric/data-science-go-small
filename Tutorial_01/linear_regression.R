@@ -8,30 +8,37 @@ names(Boston)
 # meaning of the variables
 ?Boston
 
-# plot the data
-plot(Boston)
-
-# plot median value against status
-options(repr.plot.width = 8, repr.plot.height = 6)
-plot(medv ~ lstat, data = Boston,
-            xlab = "Lower status of the population",
-            ylab = "Median value of owner-occupied homes in $1000s")
-
-# fit a linear regression model
-fit <- lm(medv ~ lstat, data = Boston)
-summary(fit)
-
-# plot the fitted model
-options(repr.plot.width = 8, repr.plot.height = 6)
-plot(medv ~ lstat, data = Boston,
-            xlab = "Lower status of the population",
-            ylab = "Median value of owner-occupied homes in $1000s")
-abline(fit, col = "red")
+# 1 Plot the data
 
 
-# export to a table
 
-# install.packages("stargazer")
-library(stargazer)
-stargazer(fit, type = "text")
-stargazer(fit, type = "html")
+
+# 2 univariate analysis
+
+
+
+# 3 bi-variate analysis
+
+
+
+# 4 multi-variate analysis (correlation matrix)
+
+
+
+
+# 5 linear regression model
+
+
+## 5.1 two variables
+
+
+## 5.2 three variables
+
+
+## 5.3 all variables
+
+
+## 5.4 linear vs. non-linear model
+
+
+## 5.5 model selection
