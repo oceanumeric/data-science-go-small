@@ -5,7 +5,7 @@ All great things come from the small beginnings
 
 ## Slides 
 
-__Tutorial 1__: [Google Slides](https://docs.google.com/presentation/d/12RCQQDQuBv5jmyMNuzxGDIsjldhoUQgaHn7JhbDFXDo/edit?usp=sharing)
+__Tutorial 1__: [T01_slides.pdf](Tutorial_01/T01_slides.pdf)
 
 Reading: 
 
@@ -32,10 +32,4 @@ Studying in a group is encouraged. There is a whatsapp group for this course. In
 ![whatsapp](images/inin-whatsapp.png)
 
 
-
-
-## AI Copilot
-
-
-![dare to ask](images/dare-to-ask-logo.png)
 
