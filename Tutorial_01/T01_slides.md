@@ -391,10 +391,35 @@ $$
 
 - The simplest neural network is linear regression.
 
+---
+
+# 5.2 Linear Regression
+
+- Key assumptions:
+    - linearity : $y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + ... + \beta_n x_n + \epsilon$ is a linear function 
+    - independence : $\epsilon$ is independent of $x_1, x_2, ..., x_n$ 
+    - homoscedasticity : $\epsilon$ has the same variance $\sigma^2$
+    - normality : $\epsilon$ is normally distributed
+
+
+---
+
+# 5.2 Linear Regression: interpretation
+
+
+generate table with 3 columns and 3 rows 
+
+|    | $X$ | $\ln(X)$ |
+|:---|:----|:---------|
+|$Y$  |  __Linear__: $Y = \beta_0 + \beta_1 X$ <br> one unit change in $X$ leads  <br> to $\beta_1$ unit change in $Y$  |  __Linear-log__: $Y = \beta_0 + \beta_1 \ln(X)$ <br>  one percent change in $X$ <br> leads to $\beta_1/100$ unit change in $Y$  |
+|$\ln(Y)$ |  __Log-linear__: $\ln(Y) = \beta_0 + \beta_1 X$ <br> one unit change in $X$ leads  <br> to $100 \times \beta_1$ unit change in $Y$  |  __Log-log__: $\ln(Y) = \beta_0 + \beta_1 \ln(X)$  <br>  one percent change in $X$ <br> leads to $\beta_1$ percent change in $Y$ |
+
+
 
 ---
 
 # In-class Lab 2 :butterfly:
+
 
 
 ---
@@ -422,6 +447,19 @@ $$
             ===============================================
             Note:               *p<0.1; **p<0.05; ***p<0.01
 ```
+
+---
+
+# 5.2 Linear Regression: interpretation
+
+
+generate table with 3 columns and 3 rows
+
+|    | Estimate| Std. Error| t value|
+|:---|--------:|----------:|-------:|
+|(Intercept)|  34.55384|   0.56263|  61.415|
+|lstat      |  -0.95005|   0.03873| -24.528|
+
 
 
 ---
