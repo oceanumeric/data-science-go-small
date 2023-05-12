@@ -12,18 +12,13 @@ names(Boston)
 
 
 
-
 # 2 univariate analysis
-
 
 
 # 3 bi-variate analysis
 
 
-
 # 4 multi-variate analysis (correlation matrix)
-
-
 
 
 # 5 linear regression model
