@@ -161,6 +161,9 @@ This kind of files such as `hello_world` will not work.
 
 ## :fire: Important one :fire:
 
+## - Left: data-science-go-small
+## - Right: DataLab-Template
+
 ---
 
 # Recap 2.1 - Data exploration with R :bar_chart:
@@ -181,10 +184,12 @@ This kind of files such as `hello_world` will not work.
 
 ## - Read the data with `fread` function
   - `file_path` argument is important
+  - If `R` file and `data` files are in the same folder, you can use `file_name` only.
 
 ```R
 library(data.table)
 # copy relative path from the file
+# every slash is a file separator
 file_path = "data/innovation_survey/extmidp21.csv"
 dt <- fread(file_path)
 ```
