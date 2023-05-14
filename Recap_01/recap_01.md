@@ -77,6 +77,46 @@ style: |
 
 
 
+---
+
+# Recap 1.2 - A truly __one-click__ environment :dart:
+
+In this codespace, you have different kinds of files:
+
+Do not touch these files:
+
+- README.md
+- .devcontainer
+- .github
+- .vscode
+
+- some other files you can change it based on your needs.
+
+
+---
+
+# Recap 1.2 - A truly __one-click__ environment :dart:
+
+The AI Copilot will help you to write codes only if your file ends with the following endings:
+
+- `hello.R`
+- `hello.py`
+- `my_file.md`
+- `my_file.html`
+- ...
+
+This kind of files such as `hello_world` will not work. 
+
+
+---
+
+# Recap 1.2 - A truly __one-click__ environment :dart:
+
+
+## :fire: There is no need to rebuild your codespace :fire:
+
+
+
 --- 
 
 # Recap 1.2 - A truly __one-click__ environment :dart:
@@ -99,6 +139,21 @@ style: |
 - Last step before you run your code
     - setup profile
 
+---
+
+
+# Recap 1.2 - A truly __one-click__ environment :dart:
+
+- Last step before you run your code
+    - setup profile
+    - here is the link: https://gist.github.com/oceanumeric/fea3f2a9d7457b53b9346e4c0f8df4b0
+    - copy and paste the code in your `import profile` section
+    - reload the window
+    - you are ready to go :rocket:
+
+- When you use `Shift + Space` to run your code, it will run but you have to switch the kernel to `R` or `Python` manually.
+
+
 
 ---
 
@@ -117,6 +172,22 @@ style: |
   - `:=` syntax
   - `.SDcols` syntax
 
+
+---
+
+# Recap 2.1 - Data exploration with R :bar_chart:
+
+## - Download the data with `wget` command
+
+## - Read the data with `fread` function
+  - `file_path` argument is important
+
+```R
+library(data.table)
+# copy relative path from the file
+file_path = "data/innovation_survey/extmidp21.csv"
+dt <- fread(file_path)
+```
 
 ---
 
