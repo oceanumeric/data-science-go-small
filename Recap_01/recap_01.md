@@ -36,7 +36,7 @@ style: |
 
 # Recap 1.1 - Manage your codespaces :woman_office_worker:
 
-![center width:800](https://media1.giphy.com/media/3ohc0ZYsgq4YrSERH2/200w.gif?cid=6c09b952e5nm1q73ivkdbsd08wwr87potbmm9ygwekdzpqwy&ep=v1_gifs_search&rid=200w.gif&ct=g)
+![center width:600](https://media.tenor.com/IPRetduuCSUAAAAM/that70s-show-shame.gif)
 
 
 --- 
@@ -91,9 +91,47 @@ style: |
     - setup profile
 
 
---- 
+---
+
 
 # Recap 1.2 - A truly __one-click__ environment :dart:
 
 - Last step before you run your code
     - setup profile
+
+
+---
+
+# Recap 2.1 - Data exploration with R :bar_chart:
+
+## :fire: Important one :fire:
+
+---
+
+# Recap 2.1 - Data exploration with R :bar_chart:
+
+- We will use `data.table` package for data exploration.
+- `data.table` is a package for __Big Data__.
+- We will practice its syntax in this practice
+  - `[i, j, by]` syntax
+  - `:=` syntax
+  - `.SDcols` syntax
+
+
+---
+
+# Recap 2.1 - Data exploration with R :bar_chart:
+
+- We will follow the steps we have learned in Tutorial 1.
+  - univariate analysis
+  - bivariate analysis
+  - multivariate analysis
+
+
+---
+
+# Recap 2.2 - Linear Regression with R :chart_with_upwards_trend:
+
+## - Simple Linear Regression
+## - Multiple Linear Regression
+## - Logistic Regression
