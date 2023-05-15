@@ -206,6 +206,73 @@ dt <- fread(file_path)
 
 ---
 
+# Recap 2.1 - Data exploration with R :bar_chart:
+
+- We will follow the steps we have learned in Tutorial 1.
+  - univariate analysis
+  - bivariate analysis
+  - multivariate analysis
+
+- Community Innovation Survey (CIS)
+  - around 5000 enterprises in Germany :de:
+  - It has lots of variables, more than 200 variables.
+  - Many stories to tell :fire:
+
+---
+
+# Recap 2.1 - Data exploration with R :bar_chart:
+
+## CIS - Community Innovation Survey
+
+- Understand Innovation in Germany :de:
+- Understand the role of enterprises in innovation
+- Possible questions:
+  - role of digitalization in innovation
+  - environmental innovation
+
+---
+
+# Recap 2.1 - Data exploration with R :bar_chart:
+
+## Missing values
+
+- Missing values are very common in real life data.
+- We have to deal with them.
+  - sometimes it is `is.na` function could find them
+  - sometimes it is `NA` value
+  - sometimes it is not easy to find them
+     - `""` is not missing value
+     - it is treated as a 'missing value' in some cases
+    
+
+
+---
+
+# Innovation Survey
+
+- Did your firm introduce new or significantly improved products or processes in the last 3 years for: ogistics, delivery or distribution methods ?
+
+|pzlv |      share|
+|:----|---------:|
+|   missing value  | 0.0834153|
+|ja   | 0.1154830|
+|nein | 0.8011017|
+
+---
+
+# Innovation Survey
+
+- compare average number of employees for two category: introduced ...
+
+
+|pzlv |      Min.|   1st Qu.|   Median|      Mean|  3rd Qu.|     Max.|
+|:----|---------:|---------:|--------:|---------:|--------:|--------:|
+|nein | 0.0000000|  8.081066| 21.50957|  80.67038|  77.6965| 1306.097|
+|ja   | 0.5451545| 13.531381| 45.24070| 129.31504| 147.9465| 1164.163|
+
+
+---
+
 # Recap 2.2 - Linear Regression with R :chart_with_upwards_trend:
 
 ## - Simple Linear Regression
