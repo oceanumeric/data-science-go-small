@@ -138,7 +138,6 @@ survey %>%
 
 
 
-
 # log transformation always plus 1 
 # to avoid log(0) = -Inf
 x <- seq(0, 6, length = 1000)
