@@ -102,7 +102,7 @@ $$
 |---|---|---|---|
 | mdev | lstat |  | |
 | mdev | age |  | |
-| mdev | age | age^2 | |
 | mdev | lstat | age | |
+| mdev | age | age^2 | |
 | mdev | lstat | age | age^2 |
 

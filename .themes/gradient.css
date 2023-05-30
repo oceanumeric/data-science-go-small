@@ -90,3 +90,7 @@ table th, table td {
 table th, table td {
   padding: 0.25em 0.5em;
 }
+
+img {
+  background-color: transparent!important;
+}

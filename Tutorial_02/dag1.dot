@@ -1,0 +1,10 @@
+digraph {
+  size="5,5!";
+  pad="0, 1";
+  rankdir="LR";
+  A -> Y
+  B -> Y
+  A -> B
+  rotate=45;
+  bgcolor="#ffffff00";
+}

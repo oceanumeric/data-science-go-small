@@ -89,34 +89,55 @@ lr1 %>%
 Boston %>%
     with(plot(age, medv))
 
-# add age^2 to the model
-lr2 <- lm(medv ~ lstat + age + I(age^2), data=Boston)
+# before we model
+# medv ~ lstat + age
+# medv ~ lstat + age + age^2
+# we should focus on age and age^2
+
+lr2 <- lm(medv ~ age + I(age^2), data=Boston)
 
 lr2 %>% 
     stargazer(type="text")
 
+# plot the model
+Boston %>%
+    with(plot(age, medv))
 
-# let's plot the model
-# coefficient for age = -0.045
-# coefficient for age^2 = 0.001
 # simulate the model
 
-# create a sequence of age values
-age_seq <- seq(min(Boston$age), max(Boston$age), length.out=100)
+age_sim <- seq(0, 100, 1)
+age_sim2 <- age_sim^2
 
-# create a data.frame with age_seq
-df <- data.frame(age=age_seq)
-df$lstat <- mean(Boston$lstat)
+# create a data frame
+sim_data <- data.frame(age_sim, age_sim2)
 
-# predict medv
-df$medv <- predict(lr2, newdata=df)
+# predict
+names(sim_data) <- c("age", "I(age^2)")
 
-head(df)
+pred <- predict(lr2, newdata=sim_data)
 
-plot(medv ~ age, data=df)
+# plot the original data
+plot(Boston$age, Boston$medv)
+# add the predicted values
+lines(age_sim, pred, col="red", lwd=2)
 
-lr3 <- lm(medv ~ age + I(age^2), data=Boston)
 
-lr3 %>% 
-    stargazer(type="text")
+# the other interesting thing is that
+# when we add lstat to the model
+# the coefficient of age and age^2 changes
+# this is called confounding
+# why?
+# because age and lstat are correlated
+# and we are trying to explain medv
+# with age and lstat
+# but age and lstat are correlated
+# so we cannot tell which one is the real driver
+
+cor(Boston$age, Boston$lstat)
+
+plot(Boston$age, Boston$lstat)
+
+# we need to check the correlation between
+# the independent variables
+# this is called multicollinearity
 
