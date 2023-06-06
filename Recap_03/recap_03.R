@@ -48,3 +48,5 @@ survey %>%
     table() %>%
     as.data.table()
 }
+
+# 
