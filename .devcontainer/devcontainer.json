@@ -1,0 +1,125 @@
+{
+    "name": "DataLab Environment",
+    "hostRequirements": {
+        "cpus": 4
+      },
+    "build": {
+      "dockerfile": "Dockerfile",
+    },
+    "settings" : {
+        // backgound color for editor
+    "workbench.colorTheme": "One Dark Pro",
+    // icon
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.inlineSuggest.enabled": true,
+    "jupyter.interactiveWindow.creationMode": "perFile",
+    "workbench.colorCustomizations": {
+        "editor.background": "#1C3029",
+        "activityBar.background": "#202A2F",
+        "sideBar.background": "#202A2F",
+        "titleBar.activeBackground": "#3D3C3D",
+        "tab.activeBackground": "#263238"
+        
+    },
+    "editor.rulers": [88],
+    // font
+    "editor.fontSize": 14,
+    "latex-workshop.latex.outDir": "./pdfile",
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.latex.autoBuild.run": "onSave",
+    "latex-workshop.latex.autoClean.run": "onBuilt", //note that the end is t is not d
+    "latex-workshop.latex.clean.fileTypes": [
+    "*.aux",
+    "*.bbl",
+    "*.blg",
+    "*.idx",
+    "*.ind",
+    "*.lof",
+    "*.lot",
+    "*.out",
+    "*.toc",
+    "*.acn",
+    "*.acr",
+    "*.alg",
+    "*.glg",
+    "*.glo",
+    "*.gls",
+    "*.ist",
+    "*.fls",
+    "*.log",
+    "*.fdb_latexmk",
+        ],
+    "latex-workshop.latex.recipes": [
+      {
+        "name": "latexmk ➞ makeFolder ➞ copyPDF",
+        "tools": ["latexmk", "makeFolder", "copyPDF"]
+      }
+    ],
+    "latex-workshop.latex.tools": [
+      {
+        "name": "latexmk",
+        "command": "latexmk",
+        "args": [
+          "-shell-escape",
+          "-synctex=1",
+          "-interaction=nonstopmode",
+          "-file-line-error",
+          "-pdf",
+          "-outdir=%OUTDIR%",
+          "%DOC%"
+        ],
+        "env": {}
+      },
+      {
+        "name": "makeFolder",
+        "command": "mkdir",
+        "args": [ 
+            "-p", 
+            "%DIR%/pdfs/"
+        ],
+        "env": {}
+      },
+      {
+        "name": "copyPDF",
+        "command": "cp",
+        "args": [ 
+            "%OUTDIR%/%DOCFILE%.pdf", 
+            "%DIR%/pdfs/"
+        ],
+        "env": {}
+      },
+      // {
+      //   "name": "deletePDF",
+      //   "command": "rm",
+      //   "args": [ 
+      //       "%OUTDIR%/%DOCFILE%.pdf"
+      //   ],
+      //   "env": {}
+      // }
+    ],
+    "github.copilot.enable": {
+        "*": true,
+        "yaml": false,
+        "plaintext": false,
+        "markdown": true
+    },
+    "markdown.marp.enableHtml": true,
+    "markdown.marp.themes": [
+        "./themes/gradient.css",
+        "./themes/beam.css"
+    ],
+  },
+  "extensions": [
+    "ms-toolsai.jupyter",
+    "ms-python.python",
+    "REditorSupport.r",
+    "GitHub.copilot",
+    "hediet.vscode-drawio",
+    "pkief.material-icon-theme",
+    "marp-team.marp-vscode",
+    "James-Yu.latex-workshop",
+    "zhuangtongfa.Material-theme",
+    "MS-vsliveshare.vsliveshare"
+  ],
+  "git.autofetch": true,
+}
