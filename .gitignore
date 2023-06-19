@@ -160,3 +160,5 @@ cython_debug/
 #.idea/
 
 /topic_modeling
+
+.DS_Store
