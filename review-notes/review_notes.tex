@@ -333,13 +333,159 @@ This means all the data we will use look like tables, such as the following one:
 
 \begin{figure}
   \centering
-  \includegraphics[width=0.9\textwidth]{../drawio/R-data-table-illustration.png}
+  \includegraphics[width=0.97\textwidth]{../drawio/R-data-table-illustration.png}
 \end{figure}
 
 
+The basic syntax of data.table is summarized in the following illustration. 
+\textbf{You will not be tested on the syntax of data.table in the exam}. However, 
+you will be tested on the underlying concepts of data.table, such as the
+type of variables (integer, character, factor, etc.). In the future if
+you will be working as a data scientist, you can use data.table to do 
+big data analysis. You will need to know the syntax of data.table for 
+practical use not for the exam.
 
 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.97\textwidth]{../drawio/R-data-table-illustration2.png}
+\end{figure}
 
+Let's start from installing and loarding the packages we need for the course.
+
+\lstset{language=R}   
+
+\begin{lstlisting}
+# install packages
+install.packages("stargazer")
+# install ISLR if you don't have it
+# install.packages("ISLR")
+install.packages("corrplot")
+# sometimes you need to install other packages
+# hopefully you can figure it out by yourself
+\end{lstlisting}
+
+After you install the packages, you can load them into R.
+
+\begin{lstlisting}
+# library for data analysis
+library(data.table)
+library(magrittr)
+library(ggplot2)
+library(knitr)
+library(stargazer)
+library(MASS)
+library(ISLR)
+library(corrplot)
+\end{lstlisting}
+
+Now, we can load the data into R and manipulate the data.
+
+\begin{lstlisting}
+# read the dataset
+cis <- fread("https://shorturl.at/wBESZ")
+# check structure of the dataset
+str(cis)
+# check the first 10 rows of the dataset
+head(cis, 10)
+# check the number of missing values in each column
+cis %>%
+    .[, .SD, .SDcols = is.double] %>%
+    # check the number of missing values in each column
+    sapply(function(x) sum(is.na(x))) %>%
+    # sort the number of missing values in each column
+    sort(decreasing = TRUE) %>%
+    # convert to data.table and keep rownames as a column
+    as.data.table(keep.rownames = TRUE) %>%
+    # set variable names
+    setnames(c("variables", "Numbe of NAs")) %>%
+    # check the first 10 
+    head(10) %>%
+    kable("pipe)
+\end{lstlisting}
+
+
+\subsection{2.1 Data Visualization}
+
+It is important to visualize the data before you start to do the analysis.
+To choose the right figure, you need to know the type of variables. Here is
+the summary:
+
+\begin{itemize}
+\tightlist
+\item \textbf{Categorical variables}: bar chart, pie chart, etc.
+\item \textbf{Continuous variables}: histogram, boxplot, etc.
+\item \textbf{Categorical vs. continuous variables}: boxplot or violin or histogram with different colors
+\end{itemize}
+
+Here is a demo of how to visualize the data. You can try to run the code
+and see the results.
+
+\begin{lstlisting}
+# four figures in one page
+# bar chart, histogram, box plot and box plot compared
+# figure size
+options(repr.plot.width = 10, repr.plot.height = 10)
+par(mfrow = c(2, 2))
+cis %>%
+    # group by branche and .N calculates the number of frequency
+    .[, .N, by = branche] %>%
+    # order it in a descending way
+    .[order(-N)] %>%
+    # get the top 10 branche (industry)
+    head(10) %>%
+    # plot it
+    with(pie(N, labels = branche, main = "Distribution of Industries"))
+
+# histgorma for number of employees
+cis %>%
+    with(hist(bges, main = "number of employees"))
+# boxplot for sales
+cis %>%
+    with(boxplot(um18,  main = "Boxplot of Sales in 2018"))
+# boxplot for log(1+sales)
+cis %>%
+    with(boxplot(log(1+um18), main = "Boxplot of Log Transform "))
+\end{lstlisting}
+
+When you visualize the data, it is important to check two things for 
+continuous variables:
+\begin{itemize}
+\tightlist
+\item \textbf{shape}: whether the distribution is symmetric or skewed (ideally, we prefer symmetric distribution)
+\item \textbf{outliers}: outliers are extreme values that deviate from other observations on data , they may indicate a variability in a measurement, experimental errors or a novelty.
+\end{itemize}
+
+\subsection{2.2 Log Transformation}
+
+Log transformation is a very useful tool to deal with skewed data.
+When you have a skewed data, you can try to log transform it. However, it
+could be tricky. You need to know the underlying theory of log transformation.
+Generally speaking, log transformation is used to make the data more symmetric.
+To avoid the negative values, we usually use \(\log(1+x)\) instead of \(\log(x)\).
+
+\begin{lstlisting}
+# log transform
+options(repr.plot.width = 10, repr.plot.height = 10)
+par(mfrow = c(2, 2))
+cis %>%
+    with(hist(um18, main = "Histgoram of Sales (2018)"))
+
+cis %>%
+    with(hist(log(1+um18), main = "Histogram of Log (1+sales)"))
+
+cis %>%
+    with(boxplot(um18, main = "Boxplot of Sales (2018)"))
+cis %>%
+    with(boxplot(log(1+um18), main = "Boxplot of Log Transform "))
+\end{lstlisting}
+
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.9\textwidth]{./figures/vis_figure2.png}
+  \caption{Log transformation of sales}
+\end{figure}
 
 
 
