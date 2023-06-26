@@ -193,6 +193,35 @@
   title    = {#1}
 }
 
+\xdefinecolor{gray}{rgb}{0.4,0.4,0.4}
+\xdefinecolor{blue}{RGB}{58,95,205}% R's royalblue3; #3A5FCD
+
+\lstset{% setup listings
+	language=R,% set programming language
+	basicstyle=\ttfamily\small,% basic font style
+	keywordstyle=\color{blue},% keyword style
+        commentstyle=\color{gray},% comment style
+	numbers=left,% display line numbers on the left side
+	numberstyle=\scriptsize,% use small line numbers
+	numbersep=10pt,% space between line numbers and code
+	tabsize=3,% sizes of tabs
+  commentstyle=\itshape\color{green!50!gray},
+  frame=single,% single frame around code
+	showstringspaces=false,% do not replace spaces in strings by a certain character
+	captionpos=b,% positioning of the caption below
+        breaklines=true,% automatic line breaking
+        escapeinside={(*}{*)},% escaping to LaTeX
+        fancyvrb=true,% verbatim code is typset by listings
+        extendedchars=false,% prohibit extended chars (chars of codes 128--255)
+        literate={"}{{\texttt{"}}}1{<-}{{$\bm\leftarrow$}}1{<<-}{{$\bm\twoheadleftarrow$}}1
+        {~}{{$\bm\sim$}}1{<=}{{$\bm\le$}}1{>=}{{$\bm\ge$}}1{!=}{{$\bm\neq$}}1{^}{{$^{\bm\wedge}$}}1,% item to replace, text, length of chars
+        alsoletter={.<-},% becomes a letter
+        alsoother={$},% becomes other
+        otherkeywords={!=, ~, $, \&, \%/\%, \%*\%, \%\%, <-, <<-, /},% other keywords
+        deletekeywords={c}% remove keywords
+}
+
+
 
 %----------------------------begin document--------------------------------%
 
@@ -231,8 +260,15 @@ course. The notes are based on the tutorials we had in the course. I am trying
 to make it concise and easy to understand. I hope it can help you to review
 the course and prepare for the exam. \textit{We are living in a very noisy world,
 therefore let's keep it simple and clear.} I setup a challenge for myself to
-deliver a clear and concise review notes within 15 pages. I hope you enjoy
-reading it. \par
+deliver a clear and concise review notes within 15 pages. This brings the trade-off,
+which means some figures and tables are not included in the notes. Therefore,
+you have to run the codes to see the results.  
+
+\vskip 6pt 
+
+\noindent I hope you enjoy reading it. I also hope you will have this notes with you
+whenever you want to do some data analysis. If one day, you still refer to this
+notes and find it still useful, I would be very happy to hear that.
 
  
 
@@ -259,6 +295,56 @@ empirical research, innovation, management  \par
 \pagenumbering{arabic}
 \setcounter{page}{1}
 \section{1 Introduction}
+
+All statistical or econometric or machine learning models are based on 
+the following assumptions:
+
+\begin{itemize}
+\tightlist
+\item there are something we know - \textbf{data}
+\item and something we don't know - \textbf{error} \(\epsilon\).
+\end{itemize}
+
+In summary, according to confucius, \textit{to know what we know and what we do not know}, 
+that is called \textbf{wisdom}. Or like Plato said, \textit{I know that I know nothing}.
+To help you to review the course, the notes will be organized as follows:
+
+\begin{enumerate}
+\tightlist 
+  \item \textbf{Data}: using \texttt{data.table} to get familiar with the data
+  \item \textbf{Simple linear regression}: how to estimate a simple linear regression model, how to interpret the results
+  \item \textbf{Multiple linear regression}: how to estimate a multiple linear regression model, how to interpret the results, how to test the model
+  \item \textbf{Introduction to logistic regression}: why do we need logistic regression
+  \item \textbf{Data manipulation}: will not be tested in the exam, but it is very useful for your future work or research
+\end{enumerate}
+
+
+\section{2 Introduction to Data and \texttt{data.table}}
+
+
+
+Broadly speaking, there are two kinds of data: \textbf{structured data} and 
+\textbf{unstructured data}. 
+Structured data is data that has a structure, such as a table, 
+whereas unstructured data is data that does not have a structure, 
+such as a text file. In this course, we focus on structured data. 
+This means all the data we will use look like tables, such as the following one:
+
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.9\textwidth]{../drawio/R-data-table-illustration.png}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
 
 
 
